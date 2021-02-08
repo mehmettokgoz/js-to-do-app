@@ -4,6 +4,7 @@
   "description": "��#\u0000 \u0000j\u0000s\u0000-\u0000t\u0000o\u0000-\u0000d\u0000o\u0000-\u0000a\u0000p\u0000p\u0000\r\u0000 \u0000",
   "main": "server.js",
   "scripts": {
+    "watch": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/mehmettokgoz/js-to-do-app#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4",
+    "nodemon": "^2.0.7"
   }
 }

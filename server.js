@@ -1,6 +1,15 @@
 let express = require('express')
+let mongodb = require('mongodb')
 
 let app = express()
+let db
+
+let connectionString = 'mongodb+srv://mehmet:tokgoz123@cluster0.aorgo.mongodb.net/ToDoApp?retryWrites=true&w=majority'
+
+mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, client) {
+    db = client.db()
+    app.listen(3000)
+})
 
 app.use(express.urlencoded({extended: false}))
 
@@ -16,7 +25,9 @@ app.get('/', function(req, res){
         </head>
         <body>
         <div class="container">
-            <h1 class="display-4 text-center py-1">To-Do App</h1>
+            <h1 class="display-4 text-center py-1">Simple To-Do App!</h1>
+            <p class="text-center mb-0">You can save your works to-do here and don't forget about them.</p>
+            <p class="text-center mt-0">You know, it is just for learning. I know you have tons of option for to-do app. :D</p>
             
             <div class="jumbotron p-3 shadow-sm">
             <form action="/create-item" method="POST">
@@ -59,11 +70,14 @@ app.get('/', function(req, res){
 })
 
 app.post('/create-item', function(req, res){
-    console.log(req.body.item)
-    res.send("Thank you for submitting.")
+    let item = req.body.item
+    db.collection('items').insertOne({text: item}, function() {
+        res.send("Thax for submit.")
+    })
+    
 })
 
 
 
-app.listen(3000)
+
 
