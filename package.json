@@ -1,0 +1,24 @@
+{
+  "name": "js-to-do-app",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000j\u0000s\u0000-\u0000t\u0000o\u0000-\u0000d\u0000o\u0000-\u0000a\u0000p\u0000p\u0000\r\u0000 \u0000",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehmettokgoz/js-to-do-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mehmettokgoz/js-to-do-app/issues"
+  },
+  "homepage": "https://github.com/mehmettokgoz/js-to-do-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
