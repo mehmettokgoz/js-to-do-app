@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended: false}))
 
 function passwordProtected(req, res, next) {
     res.set('WWW-Authenticate', 'Basic realm="Simple Todo App"')
-    if (req.headers.authorization == "Basic aGFycnkgcG90dGVyOmFsb2hvbW9yYQ==") {
+    if (req.headers.authorization == "Basic dXNlcm5hbWU6cGFzc3dvcmQ=") {
       next()
     } else {
       res.status(401).send("Authentication required")
